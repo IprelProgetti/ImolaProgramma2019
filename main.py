@@ -1,7 +1,23 @@
+# import os
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-import os
 import logging
-logger = logging.getLogger(__name__)
+
+
+#########################
+# Creazione file di log #
+#########################
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='[ %(asctime)s ] - -  %(levelname)s: %(name)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S',
+    filename='chatbot.log',
+    filemode='w'
+)
+console = logging.StreamHandler()
+console.setLevel(logging.INFO)
+logging.getLogger('').addHandler(console)
+
 
 ##############################################################
 # Definizione dei comportamenti del chatbot tramite funzioni #
@@ -10,32 +26,37 @@ logger = logging.getLogger(__name__)
 def command_1(bot, update):
     """La funzione che incapsula il primo comportamento"""
     update.message.reply_text("command_1")
+    logging.info('{} {} {}'.format("command_1", bot, update))
 
 
 def command_2(bot, update):
     """La funzione che incapsula il secondo comportamento"""
     update.message.reply_text("command_2")
+    logging.info('{} {} {}'.format("command_2", bot, update))
 
 
 def welcome(bot, update):
     """La funzione con cui dare il benvenuto all'utente"""
     update.message.reply_text("welcome")
+    logging.info('{} {} {}'.format("welcome", bot, update))
 
 
 def help_me(bot, update):
     """La funzione con cui spiegare all'utente cosa può fare"""
     update.message.reply_text("help")
+    logging.info('{} {} {}'.format("help", bot, update))
 
 
 def dialog(bot, update):
     """La funzione che risponde al linguaggio naturale inserito dall'utente"""
     update.message.reply_text("dialog")
+    logging.info('{} {} {}'.format("dialog", bot, update))
 
 
 def error(bot, update, error):
     """La funzione che gestisce le eventuali situazioni di errore"""
     update.message.reply_text("error")
-    logger.warning('Update "%s" caused error "%s"', update, error)
+    logging.warning('{} {} {} {}'.format("dialog", bot, update, error))
 
 
 #########################
@@ -91,4 +112,6 @@ def start():
 
 
 if __name__ == "__main__":
+    logging.info('Bot avviato')
     start()
+    logging.info('Bot spento')
