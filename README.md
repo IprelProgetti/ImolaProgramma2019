@@ -65,8 +65,8 @@ Aprire l'applicazione [**Telegram**](https://telegram.org/) (disponibile via app
 
 Dalla lente di ingrandimento, cercare:
 
-+ *imolaprogramma2019_bot* (bot base) --> [**LINK DIRETTO**](https://t.me/imolaprogramma2019_bot)
-+ *adv_imolaprogramma2019_bot* (bot avanzato) --> [**LINK DIRETTO**](https://t.me/adv_imolaprogramma2019_bot) 
++ *IprelAtImolaProgramma2019* (bot base) --> [**LINK DIRETTO**](https://t.me/IprelAtImolaProgramma2019_bot)
++ *adv_imolaprogramma2019* (bot avanzato) --> [**LINK DIRETTO**](https://t.me/adv_imolaprogramma2019_bot) 
 
 
 ## Nota finale
