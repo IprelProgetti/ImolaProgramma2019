@@ -1,4 +1,4 @@
-# import os
+import os
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from telegram import ParseMode
 import logging
@@ -302,8 +302,6 @@ def error(bot, update, error):
 # N.B.(1): La procedura di creazione va effettuata tramite @BotFather via app Telegram.
 #          Utilizzare il token restituito da @BotFather per collegare l'istanza del chatbot ai comportamenti desiderati.
 
-TELEGRAM_BOT_TOKEN = '892891556:AAHbizfizrP3GyPF5k5NBf--JugxdoKdvzE'
-
 # N.B.(2): Il token viene copiato in chiaro nel sorgente per motivi di tempo e per fini dimostrativi.
 #          In caso di applicazioni reali è caldamente consigliata l'adozione di adeguate misure di sicurezza.
 
@@ -317,10 +315,8 @@ def start():
     """Avvia il chatbot Telegram"""
 
     # Istanziare l'EventHandler del chatbot creato passandogli il codice identificativo.
-    updater = Updater(TELEGRAM_BOT_TOKEN)
-
     # # Più opportuno salvare il token come variabile d'ambiente e caricarne il valore trasparentemente:
-    # updater = Updater(os.environ.get('TELEGRAM_BOT_TOKEN'))
+    updater = Updater(os.environ.get('TELEGRAM_BOT_TOKEN'))
 
     # Ottenere il dispatcher di eventi.
     dp = updater.dispatcher
